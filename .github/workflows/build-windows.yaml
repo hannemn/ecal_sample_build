@@ -21,8 +21,9 @@ jobs:
         fileName: "ecal_*-win64.exe"
         
     - name: Install eCAL
-      run: ecal_5.10.2-win64.exe /SILENT /ALLUSERS
-        
+      run: |
+        cd %GITHUB_WORKSPACE%
+        ecal_5.10.2-win64.exe /SILENT /ALLUSERS
 
     - name: Checkout
       uses: actions/checkout@v2
