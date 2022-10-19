@@ -22,7 +22,7 @@ jobs:
         
     - name: Install eCAL
       run: |
-        .\ecal_*-win64.exe /SILENT /ALLUSERS
+        .\ecal_*-win64.exe /SILENT /ALLUSERS /COMPONENTS="sdk"
 
     - name: Checkout
       uses: actions/checkout@v2
