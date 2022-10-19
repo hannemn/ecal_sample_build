@@ -18,7 +18,10 @@ jobs:
       with:
         repository: "eclipse-ecal/ecal"
         latest: true
-        filname: "ecal_*-win64.exe"
+        fileName: "ecal_*-win64.exe"
+        
+    - name: Install eCAL
+      run: ecal_5.10.2-win64.exe /SILENT /ALLUSERS
         
 
     - name: Checkout
