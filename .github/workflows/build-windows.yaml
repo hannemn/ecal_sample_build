@@ -1,0 +1,23 @@
+name: Build Windows Server 2019
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-windows:
+    runs-on: windows-2019
+
+    steps:
+    - name: Download eCAL
+      run: ls
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules:  'true'
+        fetch-depth: 0
