@@ -22,7 +22,7 @@ jobs:
         
     - name: Install eCAL
       run: |
-        START /W ecal_*-win64.exe /SILENT /ALLUSERS /SUPPRESSMSGBOXES /TYPE=full
+        START /W ecal_*-win64.exe /SILENT /ALLUSERS /SUPPRESSMSGBOXES /NORESTART /TYPE=full
       shell: cmd
 
     - name: Checkout
