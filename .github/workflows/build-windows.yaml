@@ -22,8 +22,7 @@ jobs:
         
     - name: Install eCAL
       run: |
-        START /W ecal_*-win64.exe /SILENT /ALLUSERS /SUPPRESSMSGBOXES /NORESTART /TYPE=full
-      shell: cmd
+        Start-Process -Wait -FilePath ".\ecal_*-win64.exe" -ArgumentList "/SILENT /ALLUSERS /SUPPRESSMSGBOXES /NORESTART /TYPE=full"
 
     - name: Checkout
       uses: actions/checkout@v2
