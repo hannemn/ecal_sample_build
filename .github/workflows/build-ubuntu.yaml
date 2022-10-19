@@ -30,8 +30,8 @@ jobs:
       run: |
         mkdir "${{ runner.workspace }}/_build"
         cd "${{ runner.workspace }}/_build"
-        cmake -DCMAKE_BUILD_TYPE=Release ^
-              -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON ^
+        cmake -DCMAKE_BUILD_TYPE=Release \
+              -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON \
                %GITHUB_WORKSPACE%
       
     - name: Build
