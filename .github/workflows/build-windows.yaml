@@ -34,5 +34,6 @@ jobs:
       run: |
         mkdir _build
         cd _build
+        dir C:\eCAL\lib\cmake\eCAL
         cmake -G "Visual Studio 16 2019" -Tv140 -Ax64 -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON -DCMAKE_PREFIX_PATH="C:/eCAL/lib/cmake/eCAL" -DCMAKE_MODULE_PATH="C:/eCAL/lib/cmake/eCAL" ..
       shell: cmd
