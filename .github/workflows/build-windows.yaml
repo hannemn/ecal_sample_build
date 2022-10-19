@@ -22,7 +22,7 @@ jobs:
         
     - name: Install eCAL
       run: |
-        .\ecal_*-win64.exe /SILENT /ALLUSERS /SUPPRESSMSGBOXES /TYPE="full"
+        .\ecal_*-win64.exe /SILENT /ALLUSERS /SUPPRESSMSGBOXES /TYPE=full
 
     - name: Checkout
       uses: actions/checkout@v2
