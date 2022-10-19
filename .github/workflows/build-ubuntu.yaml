@@ -16,9 +16,9 @@ jobs:
         
     - name: Download & Install eCAL
       run: |
-        add-apt-repository ppa:ecal/ecal-latest
-        apt-get update && apt-get upgrade -y
-        apt-get install -y ecal
+        sudo add-apt-repository ppa:ecal/ecal-latest
+        sudo apt-get update && apt-get upgrade -y
+        sudo apt-get install -y ecal
 
     - name: Checkout
       uses: actions/checkout@v2
