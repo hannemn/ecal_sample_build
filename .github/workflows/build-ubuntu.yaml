@@ -28,8 +28,8 @@ jobs:
         
     - name: CMake
       run: |
-        mkdir "${{ runner.workspace }}\_build"
-        cd "${{ runner.workspace }}\_build"
+        mkdir "${{ runner.workspace }}/_build"
+        cd "${{ runner.workspace }}/_build"
         cmake -DCMAKE_BUILD_TYPE=Release ^
               -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON ^
                %GITHUB_WORKSPACE%
@@ -41,5 +41,5 @@ jobs:
     - name: Deploy
       uses: actions/upload-artifact@v2
       with:
-        name: windows-artefact
+        name: ubuntu-artefacts
         path: ${{ runner.workspace }}/_build/*.exe
