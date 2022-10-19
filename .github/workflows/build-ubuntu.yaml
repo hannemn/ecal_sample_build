@@ -1,0 +1,45 @@
+name: Build Ubuntu 22.04
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-windows:
+    runs-on: ubuntu-22.04
+
+    steps:
+        
+    - name: Download & Install eCAL
+      run: |
+        sudo add-apt-repository ppa:ecal/ecal-latest
+        apt-get update && apt-get upgrade -y
+        apt-get install -y ecal
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules:  'true'
+        fetch-depth: 0
+        
+    - name: CMake
+      run: |
+        mkdir "${{ runner.workspace }}\_build"
+        cd "${{ runner.workspace }}\_build"
+        cmake -DCMAKE_BUILD_TYPE=Release ^
+              -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON ^
+               %GITHUB_WORKSPACE%
+      
+    - name: Build
+      run: cmake --build . --config Release
+      working-directory: ${{ runner.workspace }}/_build
+      
+    - name: Deploy
+      uses: actions/upload-artifact@v2
+      with:
+        name: windows-artefact
+        path: ${{ runner.workspace }}/_build/*.exe
