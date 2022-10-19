@@ -21,7 +21,9 @@ jobs:
         fileName: "ecal_*-win64.exe"
         
     - name: Install eCAL
-      run: .\ecal_5.10.2-win64.exe /SILENT /ALLUSERS
+      run: |
+        .\ecal_*-win64.exe /SILENT /ALLUSERS
+        $env:ECAL_HOME
 
     - name: Checkout
       uses: actions/checkout@v2
