@@ -16,7 +16,7 @@ jobs:
         
     - name: Download & Install eCAL
       run: |
-        sudo add-apt-repository ppa:ecal/ecal-latest
+        add-apt-repository ppa:ecal/ecal-latest
         apt-get update && apt-get upgrade -y
         apt-get install -y ecal
 
