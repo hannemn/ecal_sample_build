@@ -22,7 +22,7 @@ jobs:
         
     - name: Install eCAL
       run: |
-        .\ecal_*-win64.exe /SILENT /ALLUSERS /COMPONENTS="runtime,applications,samples,doc,sdk,sdk\ecal,sdk\protobuf,sdk\hdf5"
+        .\ecal_*-win64.exe /SILENT /ALLUSERS /COMPONENTS="runtime,applications,samples,doc,sdk,sdk\\ecal,sdk\\protobuf,sdk\\hdf5"
 
     - name: Checkout
       uses: actions/checkout@v2
