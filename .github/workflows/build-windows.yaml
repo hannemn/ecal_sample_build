@@ -24,6 +24,11 @@ jobs:
       run: |
         .\ecal_*-win64.exe /SILENT /ALLUSERS
         dir env:
+    
+    - name: Test
+      run: |
+        dir env:
+        C:\eCAL\bin\ecal_mon.exe
 
     - name: Checkout
       uses: actions/checkout@v2
