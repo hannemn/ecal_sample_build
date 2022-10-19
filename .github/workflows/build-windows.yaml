@@ -23,15 +23,15 @@ jobs:
     - name: Install eCAL
       run: |
         .\ecal_*-win64.exe /SILENT /ALLUSERS
-        dir env:
-    
-    - name: Test
-      run: |
-        dir env:
-        C:\eCAL\bin\ecal_mon.exe
 
     - name: Checkout
       uses: actions/checkout@v2
       with:
         submodules:  'true'
         fetch-depth: 0
+        
+    - name: Cmake
+      run: |
+        mkdir _build
+        cd _build
+        cmake -G "Visual Studio 16 2019" -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON ..
